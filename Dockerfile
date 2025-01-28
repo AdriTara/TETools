@@ -215,7 +215,7 @@ RUN apt install -y git unzip python3-pandas python3-opencv python3-psutil python
 COPY src/TEammo /opt/TEammo
 RUN apt install -y libssl-dev libcurl4-openssl-dev
 WORKDIR /opt/TEammo
-RUN  Rscript TEammo_app.R
+RUN  Rscript TEammo_install.R
 
 #RUN git clone https://github.com/AdriTara/MCHelper /opt/MCHelper && \
 #    cd /opt/MCHelper/db && unzip "*.zip" && makeblastdb -in allDatabases.clustered_rename.fa -dbtype nucl
