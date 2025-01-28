@@ -5,3 +5,6 @@ tetools/
 
 #joe temporary files
 *~
+
+#ignore id_rsa, for security reasons
+id_rsa*

@@ -199,7 +199,32 @@ ENV LANGUAGE en_US:en
 ENV LC_ALL en_US.UTF-8     
 
 ENV PYTHONIOENCODING=utf8
-ENV PATH=/opt/RepeatMasker:/opt/RepeatMasker/util:/opt/RepeatModeler:/opt/RepeatModeler/util:/opt/coseg:/opt/ucsc_tools:/opt:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/opt/rmblast/bin:/bin
+ENV PATH=/opt/RepeatMasker:/opt/RepeatMasker/util:/opt/RepeatModeler:/opt/RepeatModeler/util:/opt/coseg:/opt/ucsc_tools:/opt:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/opt/rmblast/bin:/bin:/opt/cd-hit:/opt/mafft/bin
 
 RUN chmod +x /opt/ucsc_tools/* \
     && rm -r /opt/src
+    
+    
+# MCHelper installation
+RUN apt install -y git unzip python3-pandas python3-opencv python3-psutil python3-sklearn r-base python3-opencv && \
+    pip install --break-system-packages pdf2image Bio
+
+# TEammo
+## Uncomment when TEammo repository is public, while use the src option
+# RUN git clone --recurse-submodules git@github.com:/AdriTara/TEammo.git /opt/TEammo
+COPY src/TEammo /opt/TEammo
+RUN apt install -y libssl-dev libcurl4-openssl-dev
+WORKDIR /opt/TEammo
+RUN  Rscript TEammo_app.R
+
+#RUN git clone https://github.com/AdriTara/MCHelper /opt/MCHelper && \
+#    cd /opt/MCHelper/db && unzip "*.zip" && makeblastdb -in allDatabases.clustered_rename.fa -dbtype nucl
+#if want to run the test
+# python3 MCHelper.py -r A -t 20 -i Test_dir/repet_input/ -o Test_dir/repet_output_own/ -g Test_dir/repet_input/Dmel_genome.fasta --input_type repet -b Test_dir/repet_input/diptera_odb10.hmm -a F -n Dmel
+
+# HELIANO
+
+#RUN git clone 
+
+
+
