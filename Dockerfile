@@ -206,8 +206,8 @@ RUN chmod +x /opt/ucsc_tools/* \
     
     
 # MCHelper installation
-RUN apt install -y git unzip python3-pandas python3-opencv python3-psutil python3-sklearn r-base python3-opencv && \
-    pip install --break-system-packages pdf2image Bio
+RUN apt install -y git unzip python3-pandas python3-opencv python3-psutil python3-sklearn r-base python3-opencv hmmer emboss && \
+    pip install --break-system-packages pdf2image Bio cialign
 
 # TEammo
 ## Uncomment when TEammo repository is public, while use the src option
@@ -223,10 +223,6 @@ COPY entrypoint.sh /entrypoint.sh
 RUN chmod +x /entrypoint.sh
 ENTRYPOINT ["/entrypoint.sh"]
 
-CMD ["bash"]
-
-RUN apt install -y hmmer emboss
-RUN pip install --break-system-packages cialign
 #CMD ["Rscript", "TEammo_app.R"]
 
 #RUN git clone https://github.com/AdriTara/MCHelper /opt/MCHelper && \
