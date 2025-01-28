@@ -225,6 +225,8 @@ ENTRYPOINT ["/entrypoint.sh"]
 
 CMD ["bash"]
 
+RUN apt install -y hmmer emboss
+
 #CMD ["Rscript", "TEammo_app.R"]
 
 #RUN git clone https://github.com/AdriTara/MCHelper /opt/MCHelper && \
