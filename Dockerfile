@@ -212,10 +212,12 @@ RUN apt install -y git unzip python3-pandas python3-opencv python3-psutil python
 # TEammo
 ## Uncomment when TEammo repository is public, while use the src option
 # RUN git clone --recurse-submodules git@github.com:/AdriTara/TEammo.git /opt/TEammo
-COPY TEammo /opt/TEammo
 RUN apt install -y libssl-dev libcurl4-openssl-dev
+COPY TEammo/TEammo_install.R /TEammo_install.R
+RUN Rscript /TEammo_install.R
+COPY TEammo /opt/TEammo
 WORKDIR /opt/TEammo
-RUN Rscript TEammo_install.R
+
 
 COPY entrypoint.sh /entrypoint.sh
 RUN chmod +x /entrypoint.sh

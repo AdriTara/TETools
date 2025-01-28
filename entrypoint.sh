@@ -1,9 +1,9 @@
 #!/bin/bash
 
 # Si se proporciona un comando como argumento, ejecútalo directamente
-#if [ "$#" -gt 0 ]; then
-#    exec "$@"
-#fi
+if [ "$#" -gt 0 ]; then
+    exec "$@"
+fi
 
 # Create symbolic links dynamically
 # mkdir -p /data/BUSCO_libs && ln -sf /data/BUSCO_libs /opt/TEammo/BUSCO_libs
