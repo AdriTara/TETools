@@ -221,7 +221,9 @@ COPY entrypoint.sh /entrypoint.sh
 RUN chmod +x /entrypoint.sh
 ENTRYPOINT ["/entrypoint.sh"]
 
-CMD ["Rscript", "TEammo_app.R"]
+CMD ["bash"]
+
+#CMD ["Rscript", "TEammo_app.R"]
 
 #RUN git clone https://github.com/AdriTara/MCHelper /opt/MCHelper && \
 #    cd /opt/MCHelper/db && unzip "*.zip" && makeblastdb -in allDatabases.clustered_rename.fa -dbtype nucl
