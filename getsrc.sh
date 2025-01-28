@@ -61,4 +61,4 @@ cd ..
 cp ./src/sha256sums.txt sha256sums.txt
 rm ./src/sha256sums.txt 
 
-git clone --recurse-submodules git@github.com:/AdriTara/TEammo.git src/TEammo
+git clone --branch docker --recurse-submodules git@github.com:/AdriTara/TEammo.git TEammo

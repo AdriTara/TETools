@@ -8,3 +8,6 @@ tetools/
 
 #ignore id_rsa, for security reasons
 id_rsa*
+
+#ignore TEammo as there is a github repo
+TEammo/
