@@ -1,3 +1,7 @@
+# TEammo container
+> It is a modified version of the TETools container, with the modifications to install MCHelper and its dependencies, TEammo and its dependencies.
+> For now, TEammo is private so it needs to be downloaded outside the container with a valid SSH key and permissions.
+> `git clone https://github.com/AdriTara/TETools.git && bash getsrc.sh && docker build -t teammo .`
 # Dfam TE Tools Container
 > Note that as of version 1.88 TETools contains RepeatMasker 4.1.6. This version of RepeatMasker uses a new version of [FamDB](https://github.com/Dfam-consortium/FamDB) with a new format. This README contains instructions for modifying the files available to the TETools container, but the README file in the FamDB repository contains more information on the format itself.
 
